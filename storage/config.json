@@ -1,0 +1,13 @@
+{
+    "project": {
+        "autosave": true,
+        "autosave_interval": 300
+    },
+    "render": {
+        "fps": 30,
+        "resolution": "1920x1080"
+    },
+    "ai": {
+        "default_model": "vision-cut-ai-v1"
+    }
+}
