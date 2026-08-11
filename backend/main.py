@@ -1,6 +1,10 @@
 from fastapi import FastAPI
 
 from backend.core.settings import settings
+from backend.database.schema import DatabaseSchema
+
+DatabaseSchema.initialize()
+
 
 app = FastAPI(
     title=settings.APP_NAME,

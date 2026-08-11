@@ -2,8 +2,10 @@ from backend.models.project import ProjectModel
 
 
 def test_project_creation():
-    project = ProjectModel(name="Demo Project")
+    project = ProjectModel(
+        name="Demo Project",
+        workspace="storage/projects/Demo Project",
+    )
 
     assert project.name == "Demo Project"
-
-    assert project.version == "0.1.0"
+    assert project.workspace == "storage/projects/Demo Project"

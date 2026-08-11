@@ -1,17 +1,13 @@
 from backend.assets.manager import AssetManager
 
 
-def test_import_asset(tmp_path):
-    video = tmp_path / "demo.mp4"
-
-    video.write_bytes(b"123")
-
+def test_import_asset():
     manager = AssetManager()
 
-    asset = manager.import_asset(str(video))
+    asset = manager.import_asset("storage/samples/test.mp4")
 
-    assert asset.filename == "demo.mp4"
-
+    assert asset.filename == "test.mp4"
     assert asset.media_type == "video"
-
-    assert asset.file_size == 3
+    assert asset.duration > 0
+    assert asset.width > 0
+    assert asset.height > 0

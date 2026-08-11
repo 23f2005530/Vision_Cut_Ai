@@ -32,3 +32,9 @@ models/
 # OS
 .DS_Store
 Thumbs.db
+
+# Generated / local project data
+storage/samples/
+storage/database/
+storage/projects/
+storage/outputs/

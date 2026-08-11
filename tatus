@@ -1,0 +1,92 @@
+ .gitignore                                      |   8 [32m+[m[31m-[m
+ backend/{assets/thumbnail.py => ai/__init__.py} |   0
+ backend/ai/llm.py                               |  36 [32m++++++[m
+ backend/ai/manager.py                           |  35 [32m++++++[m
+ backend/ai/prompts.py                           | 140 [32m++++++++++++++++++++++[m
+ backend/ai/providers/__init__.py                |   0
+ backend/ai/providers/base.py                    |   7 [32m++[m
+ backend/ai/providers/ollama.py                  |  27 [32m+++++[m
+ backend/ai/scorer.py                            |  48 [32m++++++++[m
+ backend/analysis/__init__.py                    |   0
+ backend/analysis/manager.py                     |  75 [32m++++++++++++[m
+ backend/analysis/mapper.py                      |  24 [32m++++[m
+ backend/analysis/models.py                      |  21 [32m++++[m
+ backend/analysis/scene_merger.py                |  38 [32m++++++[m
+ backend/analysis/serializer.py                  |  35 [32m++++++[m
+ backend/assets/extractor.py                     |  64 [32m+++++++++++[m
+ backend/assets/manager.py                       |  11 [32m++[m
+ backend/assets/thumbnail_generator.py           |  37 [32m++++++[m
+ backend/cache/keys.py                           |  19 [32m+++[m
+ backend/cache/manager.py                        |  38 [32m++++++[m
+ backend/database/connection.py                  |  19 [32m+++[m
+ backend/database/repository.py                  | 103 [32m+++++++++++++++++[m
+ backend/database/schema.py                      |  34 [32m++++++[m
+ backend/decisions/__init__.py                   |   0
+ backend/decisions/ranker.py                     |  12 [32m++[m
+ backend/editor/__init__.py                      |   0
+ backend/editor/builder.py                       |  46 [32m++++++++[m
+ backend/editor/caption/ass_generator.py         |  90 [32m+++++++++++++++[m
+ backend/editor/caption_builder.py               |  69 [32m+++++++++++[m
+ backend/editor/ranker.py                        |  72 [32m++++++++++++[m
+ backend/editor/timeline_builder.py              |  38 [32m++++++[m
+ backend/intelligence/__init__.py                |   0
+ backend/intelligence/manager.py                 |   0
+ backend/intelligence/models.py                  |   0
+ backend/main.py                                 |   4 [32m+[m
+ backend/project/manager.py                      |  26 [32m+++[m[31m--[m
+ backend/project/serializer.py                   |  32 [32m++++++[m
+ backend/project/workspace.py                    |  25 [32m++[m[31m--[m
+ backend/services/render_service.py              | 147 [32m+++++++++++++++++++++++[m[31m-[m
+ backend/speech/__init__.py                      |   0
+ backend/speech/manager.py                       |  74 [32m++++++++++++[m
+ backend/speech/models.py                        |  24 [32m++++[m
+ backend/timeline/__init__.py                    |   3 [32m+[m
+ backend/timeline/clip.py                        |  34 [32m++++++[m
+ backend/timeline/manager.py                     | 111 [32m++++++++++++++++++[m
+ backend/timeline/models.py                      |  13 [32m+++[m
+ backend/timeline/serializer.py                  |  32 [32m++++++[m
+ backend/vision/__init__.py                      |   0
+ backend/vision/detector.py                      |   0
+ backend/vision/manager.py                       | 102 [32m++++++++++++++++[m
+ backend/vision/models.py                        |  27 [32m+++++[m
+ project_tree.py                                 |  35 [32m++++++[m
+ requirements.txt                                |  30 [32m+++++[m
+ scripts/__init__.py                             |   0
+ scripts/test_analysis_pipeline.py               |  21 [32m++++[m
+ scripts/test_builder.py                         |  53 [32m+++++++++[m
+ scripts/test_database.py                        |  20 [32m++++[m
+ scripts/test_import_pipeline.py                 |  20 [32m++++[m
+ scripts/test_library.py                         |  18 [32m+++[m
+ scripts/test_llm.py                             |  15 [32m+++[m
+ scripts/test_mapper.py                          |  27 [32m+++++[m
+ scripts/test_metadata.py                        |  13 [32m+++[m
+ scripts/test_project.py                         |  16 [32m+++[m
+ scripts/test_scene_detection.py                 |  16 [32m+++[m
+ scripts/test_scorer.py                          |  37 [32m++++++[m
+ scripts/test_thumbnail.py                       |  11 [32m++[m
+ scripts/test_timeline.py                        |  50 [32m++++++++[m
+ scripts/test_timeline_serializer.py             |  30 [32m+++++[m
+ scripts/test_transcription.py                   |  11 [32m++[m
+ scripts/test_vision.py                          |  17 [32m+++[m
+ scripts/test_workspace.py                       |  14 [32m+++[m
+ tests/debug.py                                  |  15 [32m+++[m
+ tests/test_analysis.py                          |  20 [32m++++[m
+ tests/test_ass_generator.py                     |  74 [32m++++++++++++[m
+ tests/test_asset_manager.py                     |  16 [32m+[m[31m--[m
+ tests/test_cache.py                             |  44 [32m+++++++[m
+ tests/test_cache_key.py                         |   9 [32m++[m
+ tests/test_caption_builder.py                   | 104 [32m+++++++++++++++++[m
+ tests/test_clip_split.py                        |  34 [32m++++++[m
+ tests/test_project_manager.py                   |  19 [32m+[m[31m--[m
+ tests/test_project_model.py                     |   8 [32m+[m[31m-[m
+ tests/test_rankers.py                           |  65 [32m+++++++++++[m
+ tests/test_render.py                            |  87 [32m++++++++++++++[m
+ tests/test_scene_merger.py                      |  27 [32m+++++[m
+ tests/test_timeline_builder.py                  |  68 [32m+++++++++++[m
+ tests/test_timeline_editing.py                  |  29 [32m+++++[m
+ tests/test_timeline_manager.py                  |  23 [32m++++[m
+ tests/test_timeline_models.py                   |  13 [32m+++[m
+ tests/test_timeline_serializer.py               |  28 [32m+++++[m
+ tests/test_transcript.py                        |  29 [32m+++++[m
+ tests/test_vision.py                            |  23 [32m++++[m
+ 91 files changed, 2934 insertions(+), 55 deletions(-)
