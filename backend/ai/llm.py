@@ -24,13 +24,12 @@ class LLMManager:
                     "content": prompt,
                 }
             ],
+            format="json",
             options={
                 "temperature": 0.2,
             },
         )
 
         content = response["message"]["content"]
-
-        content = content.replace("```json", "").replace("```", "").strip()
 
         return json.loads(content)

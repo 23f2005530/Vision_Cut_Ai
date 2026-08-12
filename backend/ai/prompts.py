@@ -124,9 +124,8 @@ Required format:
     "visual_relevance": 3,
     "context": 8,
     "duration": 8,
-    "reason": (
-    "Strong spoken hook, but the detected visual has little "
-    "relationship to the statement."
+    "reason": "Strong spoken hook,
+    but the detected visual has little relationship to the statement."
 )
 }}
 
